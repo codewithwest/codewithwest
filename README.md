@@ -1,25 +1,23 @@
-## Konnichiwa – こんにちは 👋
+## <span style="color:rgb(222,12,92);"> Konnichiwa – こんにちは 👋
 
-# Welcome to West Dynamics
+# <span style="color:green;"> Welcome to West Dynamics</span>
 
-## >>> Get to know me... <<<
+## <span style="color:green;"> >>> Get to know me... <<<
 
-I am a self taught full stack developer
-<img src="https://media.giphy.com/media/WUlplcMpOCEmTGBtBW/giphy.gif" width="30">
-Graduated with NQF level 5 in Mobile Development with React Native December 2022
+### <span style="color:rgb(222,12,92);"> I am a self taught full stack developer <img src="https://media.giphy.com/media/WUlplcMpOCEmTGBtBW/giphy.gif" width="30"> Graduated with NQF level 5 in Mobile Development with React Native December 2022
 
-### Contact me:
+### <span style="color:green;"> Contact me:
 
-- :mailbox: How you can reach me:
+- <span style="color:rgb(222,12,92);"> :mailbox: How you can reach me:
   [![LinkedIn Badge](https://img.shields.io/badge/LinkedIn-Profile-informational?style=flat&logo=linkedin&logoColor=white&color=0D76A8)](https://www.linkedin.com/in/codewithwest/)
 
-- :monocle_face: Want to know more about me: [Check out my portfolio here](https://codewithwest.github.io/templates/profile/)
+- <span style="color:rgb(202,12,92);"> :monocle_face: Want to know more about me: [Check out my portfolio here](https://codewithwest.github.io/templates/profile/)
 
 ---
 
-## :hammer_and_wrench::briefcase: Skills :
+## <span style="color:green;"> :hammer_and_wrench::briefcase: Skills :
 
-### Front-End Tools
+### <span style="color:green;"> Front-End Tools
 
 <div>
   <img src="tech_stacks/html.png" title="Html" alt="Html" width="40" height="40"/>&nbsp;
@@ -33,7 +31,7 @@ Graduated with NQF level 5 in Mobile Development with React Native December 2022
 
 ---
 
-### Backend-End Tools
+### <span style="color:green;"> Backend-End Tools
 
 <div>
   <img src="tech_stacks/node.png" title="Node" alt="Node" width="40" height="40"/>&nbsp;
@@ -45,7 +43,7 @@ Graduated with NQF level 5 in Mobile Development with React Native December 2022
 
 ---
 
-### Databases
+### <span style="color:green;"> Databases
 
 <div>
   <img src="tech_stacks/mongo.png" title="Mongo" alt="Mongo" width="40" height="40"/>&nbsp;
@@ -56,7 +54,7 @@ Graduated with NQF level 5 in Mobile Development with React Native December 2022
 
 ---
 
-### Containerization and Version Control tools
+### <span style="color:green;"> Containerization and Version Control tools
 
 <div>
   <img src="tech_stacks/git.png" title="Git" alt="Git" width="40" height="40"/>&nbsp;
