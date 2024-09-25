@@ -13,6 +13,7 @@
 
 - <span style="color:rgb(202,12,92);"> :monocle_face: Want to know more about me: [Check out my portfolio here](https://codewithwest.github.io/templates/profile/)
 
+
 ---
 
 ## <span style="color:green;"> :hammer_and_wrench::briefcase: Skills :
@@ -27,6 +28,8 @@
   <img src="tech_stacks/react-native.png" title="React-Native" alt="React-Native" width="40" height="40"/>&nbsp;
   <img src="tech_stacks/flutter.png" title="Flutter" alt="Flutter" width="40" height="40"/>&nbsp;
   <img src="tech_stacks/figma.png" title="Figma" alt="Figma" width="40" height="40"/>&nbsp;
+    <img src="tech_stacks/material-ui.png" title="MaterialUi" alt="MaterialUi" width="40" height="40"/>&nbsp;
+     <img src="tech_stacks/tailwind-css.png" title="MaterialUi" alt="MaterialUi" width="40" height="40"/>&nbsp;
 </div>
 
 ---
@@ -39,6 +42,8 @@
   <img src="tech_stacks/laravel.svg" title="Laravel" alt="Laravel" width="35" height="35"/>&nbsp;
   <img src="tech_stacks/python.png" title="Python" alt="Python" width="40" height="40"/>&nbsp;
   <img src="tech_stacks/django.png" title="Django" alt="Django" width="40" height="40"/>&nbsp;
+  <img src="tech_stacks/graph.png" title="Graphql" alt="Graphql" width="40" height="40"/>&nbsp;
+    <img src="tech_stacks/magento.png" title="Magento" alt="Magento" width="40" height="40"/>&nbsp;
 </div>
 
 ---
