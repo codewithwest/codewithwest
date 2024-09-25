@@ -28,8 +28,8 @@
   <img src="tech_stacks/react-native.png" title="React-Native" alt="React-Native" width="40" height="40"/>&nbsp;
   <img src="tech_stacks/flutter.png" title="Flutter" alt="Flutter" width="40" height="40"/>&nbsp;
   <img src="tech_stacks/figma.png" title="Figma" alt="Figma" width="40" height="40"/>&nbsp;
-    <img src="tech_stacks/material-ui.png" title="MaterialUi" alt="MaterialUi" width="40" height="40"/>&nbsp;
-     <img src="tech_stacks/tailwind-css.png" title="MaterialUi" alt="MaterialUi" width="40" height="40"/>&nbsp;
+  <img src="tech_stacks/material-ui.png" title="MaterialUi" alt="MaterialUi" width="40" height="40"/>&nbsp;
+  <img src="tech_stacks/tailwind-css.png" title="Tailwind" alt="Tailwind" width="40" height="40"/>&nbsp;
 </div>
 
 ---
