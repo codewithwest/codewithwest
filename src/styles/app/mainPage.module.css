@@ -1,0 +1,31 @@
+.mainProfileContainer {
+    @apply flex sm:px-96 md:px-4 lg:px-32 p-4;
+}
+
+.innerProfileContainer {
+    @apply p-8 px-10 shadow-current shadow mt-24;
+}
+
+.profileHeaderItems {
+    @apply grid grid-cols-1 md:grid-cols-3;
+}
+
+.statsProfileContainer {
+    @apply grid grid-cols-3 text-center order-last md:order-first mt-20 md:mt-0;
+}
+
+.statsProfileText {
+    @apply font-bold text-xl;
+}
+
+.profileImage {
+    @apply w-48 h-48 animate-pulse shadow-md shadow-inherit mx-auto rounded-full absolute inset-x-0 top-0 -mt-24 flex items-center justify-center text-indigo-500;
+}
+
+.contactProfileContainer {
+    @apply space-x-4 flex justify-between mt-32 md:mt-0 md:justify-center;
+}
+
+.contentItems {
+    /* @apply flex gap-1 text-md center-content items-center py-2 px-2 uppercase rounded hover:shadow-current shadow-inherit shadow hover:shadow-sm font-medium transition transform hover:-translate-y-0.5; */
+}

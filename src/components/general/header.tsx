@@ -64,9 +64,7 @@ export const Header = ({}) => {
           <Image
             src={codewithwest}
             alt="back"
-            width={160}
-            height={160}
-            className="rounded-full"
+            className="rounded-full w-full h-full"
           />
         </Link>
         {/* <ThemedText value={pageHeader} className={headerStyles.headerText} /> */}
