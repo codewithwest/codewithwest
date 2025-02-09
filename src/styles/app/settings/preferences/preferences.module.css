@@ -1,0 +1,5 @@
+.preferences {}
+
+.header {
+  @apply h-16 flex p-2 justify-center;
+}

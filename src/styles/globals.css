@@ -1,0 +1,56 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --main-dark-bg-color: #0e0f12;
+    --secondary-dark-bg-color: #03080f;
+    --main-dark-text-color: #10dede;
+    --main-dark-border-color: #10dede;
+    --main-dark-full-box-shadow: 1.5px 1.5px 4px var(--main-dark-text-color),
+      -1.5px -1.5px 4px var(--main-dark-text-color);
+  }
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  height: 100dvh;
+  display: flex;
+  overflow: none;
+  background: var(--main-dark-bg-color);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.dark {
+  background: var(--main-dark-bg-color);
+  color: var(--main-dark-text-color);
+  border-color: var(--main-dark-border-color);
+}
+
+.light {
+  background: rgba(214, 215, 216, 0.8);
+  color: rgba(var(--main-dark-bg-color));
+}
+
+.main-dark-button {
+  box-shadow: var(--main-dark-full-box-shadow);
+  padding: 5px 10px;
+  margin: 10px 20px;
+  border-radius: 5px;
+}
+
+/* .main-dark-box-shadow {
+  box-shadow: var(--main-dark-full-box-shadow);
+} */
+
+/* .main-light-button {
+  box-shadow: var(--main-light-full-box-shadow);
+  padding: 5px 10px;
+  margin: 10px 20px;
+  border-radius: 5px;
+} */

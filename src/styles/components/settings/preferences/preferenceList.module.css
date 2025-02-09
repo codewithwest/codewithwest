@@ -1,0 +1,19 @@
+.preferenceListThemedContainer {
+  @apply grid grid-cols-none m-2 gap-2 p-2 shadow-lg items-center shadow-current rounded-md;
+}
+
+.preferenceCard {
+  @apply p-8 flex justify-between rounded-lg;
+}
+
+.preferenceCardText {
+  @apply flex text-lg my-auto;
+}
+
+.cardSelect {
+  @apply relative w-full self-center pr-10 p-2 font-bold bg-transparent shadow-md shadow-current rounded-md cursor-pointer focus:bg-transparent;
+}
+
+.cardSelectOption {
+  @apply text-gray-900 bg-transparent inset-0 w-full h-10 px-4 py-2 font-bold shadow-md shadow-current rounded-lg appearance-none cursor-pointer focus:bg-transparent;
+}

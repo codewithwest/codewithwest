@@ -1,0 +1,27 @@
+services:
+  nextprofile251:
+    container_name: next_profile_251
+    stdin_open: true
+    tty: true
+    build:
+      context: .
+      dockerfile: Dockerfile.nextprofile251
+    environment:
+      NODE_ENV: development
+    ports:
+      - 3002:3000
+    develop:
+      watch:
+        - path: ./package.json
+          action: rebuild
+        - path: .
+          target: /codewithwest
+          action: sync
+    restart: always
+    volumes:
+      - .:/codewithwest:rw
+    hostname: 'next_profile_251'
+networks:
+  default:
+    name: node_dev
+    external: true
