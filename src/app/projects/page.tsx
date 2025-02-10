@@ -1,7 +1,7 @@
 "use client";
 import ThemedContainer from "@/components/general/themedContainer";
 import ThemeProvider from "@/provider/general/themeProvider";
-import { useState } from "react";
+import { useState, ReactNode } from "react";
 
 import Image from "next/image";
 
