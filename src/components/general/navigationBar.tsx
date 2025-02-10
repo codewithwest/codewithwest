@@ -48,7 +48,7 @@ const NavigationBar = () => {
             <AutoGraph fontSize="inherit" />
           </ThemedContainer>
         </Link>
-        <Link className={styles.navigationLink} href={"/"}>
+        <Link className={styles.navigationLink} href={"/projects"}>
           <ThemedText value="Projects" className={styles.navigationText} />
 
           <ThemedContainer className={styles.navigationIcon}>
