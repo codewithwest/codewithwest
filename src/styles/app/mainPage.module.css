@@ -27,5 +27,6 @@
 }
 
 .contentItems {
+    @apply flex gap-1 text-sm content-center items-center py-2 px-2 uppercase rounded hover:shadow-current shadow-inherit shadow hover:shadow-sm font-medium transition transform hover:-translate-y-0.5;
     /* @apply flex gap-1 text-md center-content items-center py-2 px-2 uppercase rounded hover:shadow-current shadow-inherit shadow hover:shadow-sm font-medium transition transform hover:-translate-y-0.5; */
 }
