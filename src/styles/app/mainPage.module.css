@@ -1,5 +1,5 @@
 .mainProfileContainer {
-    @apply flex sm:px-96 md:px-4 lg:px-32 p-4;
+    @apply flex  md:px-4 lg:px-32 p-4;
 }
 
 .innerProfileContainer {
