@@ -3,21 +3,30 @@ import ThemedContainer from "@/components/general/themedContainer";
 import ThemeProvider from "@/provider/general/themeProvider";
 import { useState } from "react";
 
+import Image from "next/image";
+
+interface PortfolioCard {
+  showCard: string
+  category: string
+  ImageHref: string
+  title:string
+  button: ReactNode
+  buttonHref: string
+}
 const Portfolio = () => {
   const [showCard, setShowCard] = useState("all");
 
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  const handleProject = (category: any) => {
+  const handleProject = (category: string) => {
     setShowCard(category);
   };
 
   return (
     <ThemeProvider>
       <ThemedContainer className="pt-20 pb-12 lg:pt-[120px] lg:pb-[90px] dark:bg-dark">
-        <div className="container mx-auto">
-          <div className="flex flex-wrap -mx-4">
-            <div className="w-full px-4">
-              <div className="mx-auto mb-[60px] max-w-[510px] text-center">
+        <ThemedContainer className="container mx-auto">
+          <ThemedContainer className="flex flex-wrap -mx-4">
+            <ThemedContainer className="w-full px-4">
+              <ThemedContainer className="mx-auto mb-[60px] max-w-[510px] text-center">
                 <span className="text-primary mb-2 block text-lg font-semibold">
                   Our Portfolio
                 </span>
@@ -28,12 +37,12 @@ const Portfolio = () => {
                   There are many variations of passages of Lorem Ipsum available
                   but the majority have suffered alteration in some form.
                 </p>
-              </div>
-            </div>
-          </div>
+              </ThemedContainer>
+            </ThemedContainer>
+          </ThemedContainer>
 
-          <div className="w-full flex flex-wrap justify-center -mx-4">
-            <div className="w-full px-4">
+          <ThemedContainer className="w-full flex flex-wrap justify-center -mx-4">
+            <ThemedContainer className="w-full px-4">
               <ul className="flex flex-wrap justify-center mb-12 space-x-1">
                 <li className="mb-1">
                   <button
@@ -96,9 +105,9 @@ const Portfolio = () => {
                   </button>
                 </li>
               </ul>
-            </div>
-          </div>
-          <div className="flex flex-wrap -mx-4">
+            </ThemedContainer>
+          </ThemedContainer>
+          <ThemedContainer className="flex flex-wrap -mx-4">
             <PortfolioCard
               ImageHref="https://i.ibb.co/64WfFPt/image-01.jpg"
               category="Branding"
@@ -147,9 +156,9 @@ const Portfolio = () => {
               buttonHref="#"
               showCard={showCard}
             />
-          </div>
-        </div>
-        \
+          </ThemedContainer>
+        </ThemedContainer>
+        
       </ThemedContainer>
     </ThemeProvider>
   );
@@ -164,21 +173,21 @@ const PortfolioCard = ({
   title,
   button,
   buttonHref,
-}) => {
+}: PortfolioCard) => {
   return (
     <>
-      <div
+      <ThemedContainer
         className={`w-full px-4 md:w-1/2 xl:w-1/3 ${
           showCard === "all" || showCard === category.toLowerCase()
             ? "block"
             : "hidden"
         }`}
       >
-        <div className="relative mb-12">
-          <div className="overflow-hidden rounded-[10px]">
-            <img src={ImageHref} alt="portfolio" className="w-full" />
-          </div>
-          <div className="relative z-10 mx-7 -mt-20 rounded-lg bg-white dark:bg-dark-2 py-[34px] px-3 text-center shadow-portfolio dark:shadow-box-dark">
+        <ThemedContainer className="relative mb-12">
+          <ThemedContainer className="overflow-hidden rounded-[10px]">
+            <Image src={ImageHref} alt="portfolio" className="w-full" />
+          </ThemedContainer>
+          <ThemedContainer className="relative z-10 mx-7 -mt-20 rounded-lg bg-white dark:bg-dark-2 py-[34px] px-3 text-center shadow-portfolio dark:shadow-box-dark">
             <span className="text-primary mb-2 block text-sm font-medium">
               {category}
             </span>
@@ -191,9 +200,9 @@ const PortfolioCard = ({
             >
               {button}
             </a>
-          </div>
-        </div>
-      </div>
+          </ThemedContainer>
+        </ThemedContainer>
+      </ThemedContainer>
     </>
   );
 };
