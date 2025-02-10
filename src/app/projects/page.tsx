@@ -1,18 +1,12 @@
 "use client";
 import ThemedContainer from "@/components/general/themedContainer";
 import ThemeProvider from "@/provider/general/themeProvider";
-import { useState, ReactNode } from "react";
+import { useState } from "react";
+import profilePicture from "@/../public/profile.jpg";
+import PortfolioCard, {
+  PortfolioCardType,
+} from "@/components/general/portfolioCard";
 
-import Image from "next/image";
-
-interface PortfolioCard {
-  showCard: string
-  category: string
-  ImageHref: string
-  title:string
-  button: ReactNode
-  buttonHref: string
-}
 const Portfolio = () => {
   const [showCard, setShowCard] = useState("all");
 
@@ -20,9 +14,105 @@ const Portfolio = () => {
     setShowCard(category);
   };
 
+  const projects = {
+    all_projects: [],
+    branding: [
+      {
+        ImageHref: profilePicture.src,
+        category: "Branding",
+        title: "Creative Agency",
+        button: "View Details",
+        buttonHref: "#",
+      },
+      {
+        ImageHref: profilePicture.src,
+        category: "Branding",
+        title: "Creative Agency",
+        button: "View Details",
+        buttonHref: "#",
+      },
+      {
+        ImageHref: profilePicture.src,
+        category: "Branding",
+        title: "Creative Agency",
+        button: "View Details",
+        buttonHref: "#",
+      },
+    ],
+    marketing: [
+      {
+        ImageHref: profilePicture.src,
+        category: "Marketing",
+        title: "Creative Agency",
+        button: "View Details",
+        buttonHref: "#",
+      },
+      {
+        ImageHref: profilePicture.src,
+        category: "Marketing",
+        title: "Creative Agency",
+        button: "View Details",
+        buttonHref: "#",
+      },
+      {
+        ImageHref: profilePicture.src,
+        category: "Marketing",
+        title: "Creative Agency",
+        button: "View Details",
+        buttonHref: "#",
+      },
+    ],
+    development: [
+      {
+        ImageHref: profilePicture.src,
+        category: "Development",
+        title: "Creative Agency",
+        button: "View Details",
+        buttonHref: "#",
+      },
+      {
+        ImageHref: profilePicture.src,
+        category: "Development",
+        title: "Creative Agency",
+        button: "View Details",
+        buttonHref: "#",
+      },
+      {
+        ImageHref: profilePicture.src,
+        category: "Development",
+        title: "Creative Agency",
+        button: "View Details",
+        buttonHref: "#",
+      },
+    ],
+    design: [
+      {
+        ImageHref: profilePicture.src,
+        category: "Design",
+        title: "Creative Agency",
+        button: "View Details",
+        buttonHref: "#",
+      },
+      {
+        ImageHref: profilePicture.src,
+        category: "Design",
+        title: "Creative Agency",
+        button: "View Details",
+        buttonHref: "#",
+      },
+      {
+        ImageHref: profilePicture.src,
+        category: "Design",
+        title: "Creative Agency",
+        button: "View Details",
+        buttonHref: "#",
+      },
+    ],
+  };
+
   return (
     <ThemeProvider>
-      <ThemedContainer className="pt-20 pb-12 lg:pt-[120px] lg:pb-[90px] dark:bg-dark">
+      <ThemedContainer className="pt-10 pb-12 lg:pt-[120px] lg:pb-[90px] dark:bg-dark w-full">
         <ThemedContainer className="container mx-auto">
           <ThemedContainer className="flex flex-wrap -mx-4">
             <ThemedContainer className="w-full px-4">
@@ -44,165 +134,44 @@ const Portfolio = () => {
           <ThemedContainer className="w-full flex flex-wrap justify-center -mx-4">
             <ThemedContainer className="w-full px-4">
               <ul className="flex flex-wrap justify-center mb-12 space-x-1">
-                <li className="mb-1">
-                  <button
-                    onClick={() => handleProject("all")}
-                    className={`inline-block rounded-lg py-2 px-5 text-center text-base font-semibold transition md:py-3 lg:px-8 ${
-                      showCard === "all"
-                        ? "activeClasses bg-primary text-white"
-                        : "inactiveClasses text-body-color dark:text-dark-6 hover:bg-primary hover:text-white"
-                    }`}
-                  >
-                    All Projects
-                  </button>
-                </li>
-                <li className="mb-1">
-                  <button
-                    onClick={() => handleProject("branding")}
-                    className={`inline-block rounded-lg py-2 px-5 text-center text-base font-semibold transition md:py-3 lg:px-8 ${
-                      showCard === "branding"
-                        ? "activeClasses bg-primary text-white"
-                        : "inactiveClasses text-body-color dark:text-dark-6 hover:bg-primary hover:text-white"
-                    }`}
-                  >
-                    Branding
-                  </button>
-                </li>
-                <li className="mb-1">
-                  <button
-                    onClick={() => handleProject("design")}
-                    className={`inline-block rounded-lg py-2 px-5 text-center text-base font-semibold transition md:py-3 lg:px-8 ${
-                      showCard === "design"
-                        ? "activeClasses bg-primary text-white"
-                        : "inactiveClasses text-body-color dark:text-dark-6 hover:bg-primary hover:text-white"
-                    }`}
-                  >
-                    Design
-                  </button>
-                </li>
-                <li className="mb-1">
-                  <button
-                    onClick={() => handleProject("marketing")}
-                    className={`inline-block rounded-lg py-2 px-5 text-center text-base font-semibold transition md:py-3 lg:px-8 ${
-                      showCard === "marketing"
-                        ? "activeClasses bg-primary text-white"
-                        : "inactiveClasses text-body-color dark:text-dark-6 hover:bg-primary hover:text-white"
-                    }`}
-                  >
-                    Marketing
-                  </button>
-                </li>
-                <li className="mb-1">
-                  <button
-                    onClick={() => handleProject("development")}
-                    className={`inline-block rounded-lg py-2 px-5 text-center text-base font-semibold transition md:py-3 lg:px-8 ${
-                      showCard === "development"
-                        ? "activeClasses bg-primary text-white"
-                        : "inactiveClasses text-body-color dark:text-dark-6 hover:bg-primary hover:text-white"
-                    }`}
-                  >
-                    Development
-                  </button>
-                </li>
+                {Object.keys(projects).map((project: string) => (
+                  <li className="mb-1" key={project}>
+                    <div className="flex justify-center">
+                      <button
+                        onClick={() => handleProject(project)}
+                        className={`inline-flex items-center justify-center whitespace-nowrap rounded-md text-lg font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 shadow-sm  mx-1 hover:bg-black/90 h-10 p-8  capitalize ${
+                          showCard === project
+                            ? "activeClasses shadow-current"
+                            : "inactiveClasses text-body-color shadow-black  hover:text-white"
+                        }`}
+                      >
+                        {project.split("_").join(" ")}
+                      </button>
+                    </div>
+                  </li>
+                ))}
               </ul>
             </ThemedContainer>
           </ThemedContainer>
           <ThemedContainer className="flex flex-wrap -mx-4">
-            <PortfolioCard
-              ImageHref="https://i.ibb.co/64WfFPt/image-01.jpg"
-              category="Branding"
-              title="Creative Agency"
-              button="View Details"
-              buttonHref="#"
-              showCard={showCard}
-            />
-            <PortfolioCard
-              ImageHref="https://i.ibb.co/PT7ghRs/image-06.jpg"
-              category="marketing"
-              title="Creative Agency"
-              button="View Details"
-              buttonHref="#"
-              showCard={showCard}
-            />
-            <PortfolioCard
-              ImageHref="https://i.ibb.co/vkt8C1P/image-02.jpg"
-              category="marketing"
-              title="Creative Agency"
-              button="View Details"
-              buttonHref="#"
-              showCard={showCard}
-            />
-            <PortfolioCard
-              ImageHref="https://i.ibb.co/3FKqS1G/image-03.jpg"
-              category="Development"
-              title="Creative Agency"
-              button="View Details"
-              buttonHref="#"
-              showCard={showCard}
-            />
-            <PortfolioCard
-              ImageHref="https://i.ibb.co/m6dq2fX/image-04.jpg"
-              category="Design"
-              title="Creative Agency"
-              button="View Details"
-              buttonHref="#"
-              showCard={showCard}
-            />
-            <PortfolioCard
-              ImageHref="https://i.ibb.co/mCPjBsH/image-05.jpg"
-              category="Marketing"
-              title="Creative Agency"
-              button="View Details"
-              buttonHref="#"
-              showCard={showCard}
-            />
+            {Object.values(projects)
+              .flat()
+              .map((project: PortfolioCardType, index: number) => (
+                <PortfolioCard
+                  key={index}
+                  ImageHref={project.ImageHref}
+                  category={project.category}
+                  title={project.title}
+                  button={project.button}
+                  buttonHref={project.buttonHref}
+                  showCard={showCard}
+                />
+              ))}
           </ThemedContainer>
         </ThemedContainer>
-        
       </ThemedContainer>
     </ThemeProvider>
   );
 };
 
 export default Portfolio;
-
-const PortfolioCard = ({
-  showCard,
-  category,
-  ImageHref,
-  title,
-  button,
-  buttonHref,
-}: PortfolioCard) => {
-  return (
-    <>
-      <ThemedContainer
-        className={`w-full px-4 md:w-1/2 xl:w-1/3 ${
-          showCard === "all" || showCard === category.toLowerCase()
-            ? "block"
-            : "hidden"
-        }`}
-      >
-        <ThemedContainer className="relative mb-12">
-          <ThemedContainer className="overflow-hidden rounded-[10px]">
-            <Image src={ImageHref} alt="portfolio" className="w-full" />
-          </ThemedContainer>
-          <ThemedContainer className="relative z-10 mx-7 -mt-20 rounded-lg bg-white dark:bg-dark-2 py-[34px] px-3 text-center shadow-portfolio dark:shadow-box-dark">
-            <span className="text-primary mb-2 block text-sm font-medium">
-              {category}
-            </span>
-            <h3 className="text-dark dark:text-white mb-5 text-xl font-bold">
-              {title}
-            </h3>
-            <a
-              href={buttonHref}
-              className="text-body-color dark:text-dark-6 hover:border-primary hover:bg-primary inline-block rounded-md border border-stroke dark:border-dark-3 py-[10px] px-7 text-sm font-medium transition hover:text-white"
-            >
-              {button}
-            </a>
-          </ThemedContainer>
-        </ThemedContainer>
-      </ThemedContainer>
-    </>
-  );
-};
