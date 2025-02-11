@@ -114,7 +114,7 @@ const Portfolio = () => {
     <ThemeProvider>
       <ThemedContainer className="pt-10 pb-12 lg:pt-[120px] lg:pb-[90px] dark:bg-dark w-full">
         <ThemedContainer className="container mx-auto">
-          <ThemedContainer className="flex flex-wrap -mx-4">
+          <ThemedContainer className="flex flex-wrap">
             <ThemedContainer className="w-full px-4">
               <ThemedContainer className="mx-auto mb-[60px] max-w-[510px] text-center">
                 <span className="text-primary mb-2 block text-lg font-semibold">
@@ -131,7 +131,7 @@ const Portfolio = () => {
             </ThemedContainer>
           </ThemedContainer>
 
-          <ThemedContainer className="w-full flex flex-wrap justify-center -mx-4">
+          <ThemedContainer className="w-full flex flex-wrap justify-center">
             <ThemedContainer className="w-full px-4">
               <ul className="flex flex-wrap justify-center mb-12 space-x-1">
                 {Object.keys(projects).map((project: string) => (
@@ -153,7 +153,7 @@ const Portfolio = () => {
               </ul>
             </ThemedContainer>
           </ThemedContainer>
-          <ThemedContainer className="flex flex-wrap -mx-4">
+          <ThemedContainer className="flex flex-wrap">
             {Object.values(projects)
               .flat()
               .map((project: PortfolioCardType, index: number) => (
