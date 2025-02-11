@@ -13,14 +13,6 @@ export type PortfolioCardType = {
   buttonHref: string;
 };
 
-// export interface PortfolioCard {
-//   showCard: string;
-//   category: string;
-//   ImageHref: string;
-//   title: string;
-//   button: ReactNode;
-//   buttonHref: string;
-// }
 const PortfolioCard = ({
   showCard,
   category,
@@ -32,8 +24,8 @@ const PortfolioCard = ({
   return (
     <>
       <ThemedContainer
-        className={` w-full mx-4 sm:m-0 px-4  md:w-1/2 xl:w-1/3 ${
-          showCard === "all" || showCard === category.toLowerCase()
+        className={`w-full mx-4 sm:m-0 px-4  md:w-1/2 xl:w-1/3 ${
+          showCard === "all_projects" || showCard === category.toLowerCase()
             ? "block"
             : "hidden"
         }`}
@@ -45,7 +37,7 @@ const PortfolioCard = ({
               width={500}
               height={500}
               alt="portfolio"
-              className="w-full"
+              className="w-full p-2 rounded-lg backdrop-blur-[14px] "
             />
           </ThemedContainer>
           <ThemedContainer className="relative z-10 mx-7 -mt-20 rounded-lg backdrop-blur-[14px] shadow-sm border-t-2 border-t-blue-700 shadow-current  dark:bg-dark-2 py-[34px] px-3 text-center shadow-portfolio dark:shadow-box-dark">

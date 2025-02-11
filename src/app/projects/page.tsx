@@ -8,11 +8,10 @@ import PortfolioCard, {
 } from "@/components/general/portfolioCard";
 
 const Portfolio = () => {
-  const [showCard, setShowCard] = useState("all");
+  const [showCard, setShowCard] = useState("all_projects");
 
-  const handleProject = (category: string) => {
-    setShowCard(category);
-  };
+  const handleProject = (category: string) =>
+    category === "all_projects" ? setShowCard(category) : setShowCard(category);
 
   const projects = {
     all_projects: [],
