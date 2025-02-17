@@ -11,7 +11,7 @@
 - <span style="color:rgb(222,12,92);"> :mailbox: How you can reach me:
   [![LinkedIn Badge](https://img.shields.io/badge/LinkedIn-Profile-informational?style=flat&logo=linkedin&logoColor=white&color=0D76A8)](https://www.linkedin.com/in/codewithwest/)
 
-- <span style="color:rgb(202,12,92);"> :monocle_face: Want to know more about me: [Check out my portfolio here](https://codewithwest.github.io/templates/profile/)
+- <span style="color:rgb(202,12,92);"> :monocle_face: Want to know more about me: [Check out my portfolio here](https://codewithwest.vercel.app/)
 
 
 ---
@@ -43,7 +43,8 @@
   <img src="tech_stacks/python.png" title="Python" alt="Python" width="40" height="40"/>&nbsp;
   <img src="tech_stacks/django.png" title="Django" alt="Django" width="40" height="40"/>&nbsp;
   <img src="tech_stacks/graph.png" title="Graphql" alt="Graphql" width="40" height="40"/>&nbsp;
-    <img src="tech_stacks/magento.png" title="Magento" alt="Magento" width="40" height="40"/>&nbsp;
+  <img src="tech_stacks/magento.png" title="Magento" alt="Magento" width="40" height="40"/>&nbsp;
+<!--   <img src="tech_stacks/go.png" title="Magento" alt="Magento" width="40" height="40"/>&nbsp; -->
 </div>
 
 ---
