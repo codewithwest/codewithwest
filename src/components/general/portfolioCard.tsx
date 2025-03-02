@@ -1,17 +1,8 @@
 "use client";
 
+import { PortfolioCardType } from "@/helpers/general/projects";
 import ThemedContainer from "./themedContainer";
 import Image from "next/image";
-import { ReactNode } from "react";
-
-export type PortfolioCardType = {
-  showCard?: string | undefined;
-  category: string;
-  ImageHref: string | ImageData;
-  title: string;
-  button: ReactNode;
-  buttonHref: string;
-};
 
 const PortfolioCard = ({
   showCard,
@@ -23,9 +14,10 @@ const PortfolioCard = ({
 }: PortfolioCardType) => {
   return (
     <>
+      {console.log("show card: " + showCard, " category name: " + category)}
       <ThemedContainer
         className={`w-full mx-4 sm:m-0 px-4  md:w-1/2 xl:w-1/3 ${
-          showCard === "all_projects" || showCard === category.toLowerCase()
+          showCard === "" || showCard === category.toLowerCase()
             ? "block"
             : "hidden"
         }`}
