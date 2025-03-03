@@ -13,8 +13,7 @@ const PortfolioCard = ({
   buttonHref,
 }: PortfolioCardType) => {
   return (
-    <>
-      {console.log("show card: " + showCard, " category name: " + category)}
+    <ThemedContainer>
       <ThemedContainer
         className={`w-full mx-4 sm:m-0 px-4  md:w-1/2 xl:w-1/3 ${
           showCard === "" || showCard === category.toLowerCase()
@@ -48,7 +47,7 @@ const PortfolioCard = ({
           </ThemedContainer>
         </ThemedContainer>
       </ThemedContainer>
-    </>
+    </ThemedContainer>
   );
 };
 
