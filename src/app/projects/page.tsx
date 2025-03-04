@@ -51,12 +51,23 @@ const Projects = () => {
       <li className="mb-1" key={index}>
         <div className="flex justify-center">
           <button
-            onClick={() => handleProject(showCard)}
-            className={`inline-flex items-center justify-center whitespace-nowrap rounded-md text-lg font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 shadow-sm  mx-1 hover:bg-black/90 h-10 p-8  capitalize ${
-              showCard === projectCategoryName
-                ? "activeClasses shadow-current"
-                : "inactiveClasses text-body-color shadow-black  hover:text-white"
-            }`}
+            onClick={() => {
+              console.log(
+                showCard.toLowerCase(),
+                projectCategoryName.toLowerCase()
+              );
+
+              handleProject(showCard);
+            }}
+            className={`inline-flex items-center justify-center whitespace-nowrap 
+              rounded-md text-lg font-medium ring-offset-background transition-colors 
+              focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring 
+              focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 
+              shadow-sm mx-1 hover:bg-black/90 h-10 p-8 capitalize ${
+                showCard.toLowerCase() === projectCategoryName.toLowerCase()
+                  ? "activeClasses shadow-current"
+                  : "inactiveClasses text-body-color shadow-black hover:text-white"
+              }`}
           >
             {projectCategoryName}
           </button>
