@@ -13,7 +13,7 @@ const Journey = () => {
     const journey = [
         {
             date_interval: `September 2023 - ${date.toLocaleString('default', { month: 'long' })} ${date.getFullYear()}`,
-            title: "Backend Developer [Vaimo]",
+            title: "Backend Developer (Vaimo)",
             description: `Provided technical support for Vaimo's e-commerce platform, leveraging expertise in 
                             [Magento, PHP, MySQL, Python, Node, React, Next]. Responsibilities included:
                             Troubleshooting and resolving complex technical issues related to [platform 
@@ -59,7 +59,7 @@ const Journey = () => {
         },
         {
             date_interval: "May 2023- September 2023",
-            title: "Meta Back-End Developer [Coursera]",
+            title: "Meta Back-End Developer (Coursera)",
             description:  "Developed a robust foundation in back-end engineering through the Meta Back-End Developer Certificate \
             program on Coursera. Mastered Python and the Django framework, and gained practical experience with \
             relational (SQL) and NoSQL databases. Designed and implemented a fully functional e-commerce platform API, \
@@ -78,6 +78,17 @@ const Journey = () => {
             Designed and deployed a [Mention a specific project or type of project, e.g., 'real-time chat application'] demonstrating practical \
             application of learned skills.",
             link: "#",
+            type: "education"
+        },
+        {
+            date_interval: "June 2022- December 2022",
+            title: "Forward Program Certificate (McKinsey)",
+            description: "Completed the McKinsey.org Forward Program, developing essential skills for the future of work. Mastered the McKinsey \
+            approach to problem-solving, enhancing analytical and strategic thinking. Improved communication and influence through structured \
+            frameworks, and cultivated adaptability and resilience for navigating dynamic environments. Developed a foundational digital toolkit, \
+            enabling efficient planning and execution. Demonstrated a commitment to continuous learning and professional development through \
+            completion of this rigorous program.",
+            link:"https://www.credly.com/badges/8c7853b7-3ce5-40d6-9df4-7cd9be4d90e8/public_url",
             type: "education"
         },
         {
