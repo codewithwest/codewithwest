@@ -2,7 +2,6 @@ import {
   AccountCircle,
   AutoGraph,
   Close,
-  FlashOn,
   More,
 } from "@mui/icons-material";
 import Link from "next/link";
@@ -35,12 +34,6 @@ const NavigationBar = () => {
       </ThemedButton>
 
       <nav className={styles.navigationThemedContainer} id="navigationMenu">
-        {/* <Link className={styles.navigationLink} href={"/"}>
-          <ThemedText value="More" className={styles.navigationText} />
-          <ThemedContainer className={styles.navigationIcon}>
-            <FlashOn fontSize="inherit" />
-          </ThemedContainer>
-        </Link> */}
         <Link className={styles.navigationLink} href={"/journey"}>
           <ThemedText value="Journey" className={styles.navigationText} />
 
