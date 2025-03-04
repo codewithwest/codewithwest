@@ -41,7 +41,7 @@ const NavigationBar = () => {
             <FlashOn fontSize="inherit" />
           </ThemedContainer>
         </Link>
-        <Link className={styles.navigationLink} href={"/"}>
+        <Link className={styles.navigationLink} href={"/journey"}>
           <ThemedText value="Journey" className={styles.navigationText} />
 
           <ThemedContainer className={styles.navigationIcon}>
