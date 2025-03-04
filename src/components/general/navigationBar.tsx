@@ -35,12 +35,12 @@ const NavigationBar = () => {
       </ThemedButton>
 
       <nav className={styles.navigationThemedContainer} id="navigationMenu">
-        <Link className={styles.navigationLink} href={"/"}>
+        {/* <Link className={styles.navigationLink} href={"/"}>
           <ThemedText value="More" className={styles.navigationText} />
           <ThemedContainer className={styles.navigationIcon}>
             <FlashOn fontSize="inherit" />
           </ThemedContainer>
-        </Link>
+        </Link> */}
         <Link className={styles.navigationLink} href={"/journey"}>
           <ThemedText value="Journey" className={styles.navigationText} />
 
