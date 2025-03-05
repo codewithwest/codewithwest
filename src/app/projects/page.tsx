@@ -52,12 +52,7 @@ const Projects = () => {
         <div className="flex justify-center">
           <button
             onClick={() => {
-              console.log(
-                showCard.toLowerCase(),
-                projectCategoryName.toLowerCase()
-              );
-
-              handleProject(showCard);
+              handleProject(projectCategoryName);
             }}
             className={`inline-flex items-center justify-center whitespace-nowrap 
               rounded-md text-lg font-medium ring-offset-background transition-colors 
@@ -94,8 +89,7 @@ const Projects = () => {
                   Our Recent Projects
                 </h2>
                 <p className="text-body-color text-base dark:text-dark-6">
-                  There are many variations of passages of Lorem Ipsum available
-                  but the majority have suffered alteration in some form.
+                  This is where we showcase our past, present and future for none exist without the other
                 </p>
               </ThemedContainer>
             </ThemedContainer>
