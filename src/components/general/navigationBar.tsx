@@ -1,9 +1,9 @@
 import {
   AccountCircle,
   AutoGraph,
-  Close,
-  More,
+  Close
 } from "@mui/icons-material";
+import AppsIcon from '@mui/icons-material/Apps';
 import Link from "next/link";
 import ThemedText from "./ThemedText";
 import styles from "@/styles/components/general/navigationBar.module.css";
@@ -43,17 +43,16 @@ const NavigationBar = () => {
         </Link>
         <Link className={styles.navigationLink} href={"/projects"}>
           <ThemedText value="Projects" className={styles.navigationText} />
-
           <ThemedContainer className={styles.navigationIcon}>
-            <AccountCircle fontSize="inherit" />
+            <AppsIcon fontSize="inherit" />
           </ThemedContainer>
+          
         </Link>
 
         <Link className={styles.navigationLink} href={"/"}>
           <ThemedText value="Profile" className={styles.navigationText} />
-
           <ThemedContainer className={styles.navigationIcon}>
-            <More fontSize="inherit" />
+            <AccountCircle fontSize="inherit" />
           </ThemedContainer>
         </Link>
       </nav>

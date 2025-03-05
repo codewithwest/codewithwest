@@ -10,19 +10,9 @@ import Link from "next/link";
 import mainPageStyles from "@/styles/app/mainPage.module.css";
 import { Email, GitHub, LinkedIn } from "@mui/icons-material";
 const Home = () => {
-  // const theme = useSelector(
-  //   (state: { theme: { theme: ThemeType } }) => state.theme.theme.mode
-  // );
-  // const dispatch = useDispatch();
-  // const handleThemeChange = (newTheme?: string) => {
-  //   // newTheme = e.target.value;
-  //   dispatch(setTheme(newTheme))flex-col w-full h-full;
-  // };
-
   return (
     <ThemeProvider>
       <ThemedContainer className={mainPageStyles.mainProfileContainer}>
-        {/* <ThemedContainer className="flex"> */}
         <ThemedContainer className={mainPageStyles.innerProfileContainer}>
           <ThemedContainer className={mainPageStyles.profileHeaderItems}>
             <ThemedContainer className={mainPageStyles.statsProfileContainer}>
@@ -66,7 +56,7 @@ const Home = () => {
                 <LinkedIn />
                 Connect
               </Link>
-              <Link
+              <Link 
                 href={
                   "malito:jonaslekgau@gmail.com?subject=Inquiry from your profile"
                 }
@@ -123,7 +113,6 @@ const Home = () => {
             </Link>
           </ThemedContainer>
         </ThemedContainer>
-        {/* </ThemedContainer> */}
       </ThemedContainer>
     </ThemeProvider>
   );
