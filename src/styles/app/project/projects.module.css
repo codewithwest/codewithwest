@@ -1,0 +1,55 @@
+.mainContainer {
+    @apply pt-10 pb-12 lg:pt-[120px] lg:pb-[90px] w-full
+}
+
+.innerContainer {
+    @apply container mx-auto
+}
+
+.header {
+    @apply flex flex-wrap
+}
+
+.headerInnerContainer {
+    @apply w-full px-4
+}
+
+.headerMainContainer {
+    @apply mx-auto mb-[60px] max-w-[510px] text-center
+}
+
+.headerText {
+    @apply mb-2 block text-lg font-semibold
+}
+
+.secondHeaderText {
+    @apply mb-3 text-3xl leading-[1.208] font-bold sm:text-4xl md:text-[40px]
+}
+
+.headerDescription {
+    @apply text-base
+}
+
+.projectsNavContainer {
+    @apply w-full flex flex-wrap justify-center
+}
+
+.projectsNavInnerContainer {
+    @apply w-full px-4
+}
+
+.projectsCardsContainer {
+    @apply flex flex-wrap justify-center mb-12 space-x-1
+}
+
+.categoryButtonContainer {
+    @apply flex justify-center
+}
+
+.categoryButton {
+    @apply inline-flex items-center justify-center whitespace-nowrap rounded-md;
+    @apply text-lg font-medium ring-offset-background transition-colors;
+    @apply focus-visible:outline-none focus-visible:ring-2 shadow-md;
+    @apply disabled:pointer-events-none disabled:opacity-50;
+    @apply mx-1 hover:bg-black/90 h-10 p-8 capitalize;
+}

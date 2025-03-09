@@ -1,5 +1,3 @@
-import { ReactNode } from "react";
-
 export type projectCategoryType = {
   id: number;
   name: string;
@@ -10,8 +8,10 @@ export type PortfolioCardType = {
   category: string;
   ImageHref: string | ImageData;
   title: string;
-  button: ReactNode;
-  buttonHref: string;
+
+  githubLink: string;
+  liveLink: string;
+  description: string;
 };
 
 export type projectType = {

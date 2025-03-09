@@ -3,14 +3,16 @@
 import { PortfolioCardType } from "@/helpers/general/projects";
 import ThemedContainer from "./themedContainer";
 import Image from "next/image";
+import { EmergencyShare, GitHub } from "@mui/icons-material";
 
 const PortfolioCard = ({
   showCard,
   category,
   ImageHref,
   title,
-  button,
-  buttonHref,
+  description,
+  githubLink,
+  liveLink,
 }: PortfolioCardType) => {
   return (
     <ThemedContainer
@@ -30,18 +32,28 @@ const PortfolioCard = ({
             className="w-full p-2 rounded-lg backdrop-blur-[14px] "
           />
         </ThemedContainer>
-        <ThemedContainer className="relative z-10 mx-7 -mt-20 rounded-lg backdrop-blur-[14px] shadow-sm border-t-2 border-t-blue-700 shadow-current  dark:bg-dark-2 py-[34px] px-3 text-center shadow-portfolio dark:shadow-box-dark">
-          <span className="text-primary mb-2 block text-sm font-medium">
+        <ThemedContainer className="relative z-10 mx-7 -mt-20 rounded-lg backdrop-blur-[14px] shadow-sm border-t-2 border-t-green-700 shadow-current  dark:bg-dark-2 py-[34px] px-3 text-center shadow-portfolio dark:shadow-box-dark">
+          {/* <span className="text-primary mb-2 block text-sm font-medium">
             {category}
-          </span>
+          </span> */}
           <h3 className="text-dark dark:text-white mb-5 text-xl font-bold">
             {title}
           </h3>
+          <p>{description}</p>
+
           <a
-            href={buttonHref}
-            className="text-body-color dark:text-dark-6 hover:border-primary hover:bg-primary inline-block rounded-md border border-stroke dark:border-dark-3 py-[10px] px-7 text-sm font-medium transition hover:text-white"
+            target="_blank"
+            href={githubLink}
+            className="text-body-color dark:text-dark-6 hover:border-primary hover:bg-primary inline-block rounded-md   dark:border-dark-3 py-[10px] px-7 text-sm font-medium transition hover:text-white"
           >
-            {button}
+            <GitHub />
+          </a>
+          <a
+            target="_blank"
+            href={liveLink}
+            className="text-body-color dark:text-dark-6 hover:border-primary hover:bg-primary inline-block rounded-md   dark:border-dark-3 py-[10px] px-7 text-sm font-medium transition hover:text-white"
+          >
+            <EmergencyShare />
           </a>
         </ThemedContainer>
       </ThemedContainer>

@@ -10,6 +10,7 @@ import {
 } from "@/provider/data_schema/projects.gql";
 import { projectCategoryType, projectType } from "@/helpers/general/projects";
 import profilePicture from "@/../public/profile.jpg";
+import projectStyles from "@/styles/app/project/projects.module.css";
 
 const Projects = () => {
   const [showCard, setShowCard] = useState("");
@@ -29,6 +30,12 @@ const Projects = () => {
     return loading ? [] : data?.getProjects;
   }, [loading, data]);
 
+  const projectCategoriesData = useMemo(() => {
+    return projectCategories?.loading
+      ? []
+      : projectCategories?.data?.getProjectCategories;
+  }, [projectCategories]);
+
   const getCategoryName = (categoryId: number): string => {
     let categoryName = "";
     projectCategoriesData?.forEach((category: projectCategoryType) => {
@@ -36,11 +43,6 @@ const Projects = () => {
     });
     return categoryName?.toLowerCase();
   };
-  const projectCategoriesData = useMemo(() => {
-    return projectCategories?.loading
-      ? []
-      : projectCategories?.data?.getProjectCategories;
-  }, [projectCategories]);
 
   const categoryButton = (
     index: number,
@@ -48,21 +50,20 @@ const Projects = () => {
     showCard: string
   ) => {
     return (
-      <li className="mb-1" key={index}>
-        <div className="flex justify-center">
+      <li key={index}>
+        <div className={projectStyles.categoryButtonContainer}>
           <button
             onClick={() => {
-              handleProject(projectCategoryName);
+              handleProject(showCard);
             }}
-            className={`inline-flex items-center justify-center whitespace-nowrap 
-              rounded-md text-lg font-medium ring-offset-background transition-colors 
-              focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring 
-              focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 
-              shadow-sm mx-1 hover:bg-black/90 h-10 p-8 capitalize ${
-                showCard.toLowerCase() === projectCategoryName.toLowerCase()
-                  ? "activeClasses shadow-current"
-                  : "inactiveClasses text-body-color shadow-black hover:text-white"
-              }`}
+            className={`${projectStyles.categoryButton} ${
+              showCard === "" &&
+              projectCategoryName.toLowerCase() === "all projects"
+                ? `activeClasses shadow-current`
+                : showCard === projectCategoryName.toLowerCase()
+                ? `activeClasses shadow-current`
+                : `inactiveClasses shadow-black hover:text-white`
+            }`}
           >
             {projectCategoryName}
           </button>
@@ -77,27 +78,28 @@ const Projects = () => {
 
   return (
     <ThemeProvider>
-      <ThemedContainer className="pt-10 pb-12 lg:pt-[120px] lg:pb-[90px] dark:bg-dark w-full">
-        <ThemedContainer className="container mx-auto">
-          <ThemedContainer className="flex flex-wrap">
-            <ThemedContainer className="w-full px-4">
-              <ThemedContainer className="mx-auto mb-[60px] max-w-[510px] text-center">
-                <span className="text-primary mb-2 block text-lg font-semibold">
-                  Our Portfolio
-                </span>
-                <h2 className="text-dark mb-3 text-3xl leading-[1.208] font-bold sm:text-4xl md:text-[40px]">
+      <ThemedContainer className={projectStyles.mainContainer}>
+        <ThemedContainer className={projectStyles.innerContainer}>
+          <ThemedContainer className={projectStyles.header}>
+            <ThemedContainer className={projectStyles.headerInnerContainer}>
+              <ThemedContainer className={projectStyles.headerMainContainer}>
+                <span className={projectStyles.headerText}>Our Portfolio</span>
+                <h2 className={projectStyles.secondHeaderText}>
                   Our Recent Projects
                 </h2>
-                <p className="text-body-color text-base dark:text-dark-6">
-                  This is where we showcase our past, present and future for none exist without the other
+                <p className={projectStyles.headerDescription}>
+                  This is where we showcase our past, present and future for
+                  none exist without the other
                 </p>
               </ThemedContainer>
             </ThemedContainer>
           </ThemedContainer>
 
-          <ThemedContainer className="w-full flex flex-wrap justify-center">
-            <ThemedContainer className="w-full px-4">
-              <ul className="flex flex-wrap justify-center mb-12 space-x-1">
+          <ThemedContainer className={projectStyles.projectsNavContainer}>
+            <ThemedContainer
+              className={projectStyles.projectsNavInnerContainer}
+            >
+              <ul className={projectStyles.projectsCardsContainer}>
                 {projectCategories?.loading ? (
                   <>Loading Categories...</>
                 ) : (
@@ -134,8 +136,9 @@ const Projects = () => {
                   ImageHref={profilePicture.src}
                   category={getCategoryName(project?.project_category_id)}
                   title={project?.name}
-                  button={project?.name}
-                  buttonHref={project?.name}
+                  githubLink={project?.github_link}
+                  liveLink={project?.live_link}
+                  description={project?.description}
                   showCard={showCard}
                 />
               ))}
