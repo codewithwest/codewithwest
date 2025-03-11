@@ -9,7 +9,7 @@ import {
   GET_PROJECTS,
 } from "@/provider/data_schema/projects.gql";
 import { projectCategoryType, projectType } from "@/helpers/general/projects";
-import profilePicture from "@/../public/profile.jpg";
+import profilePicture from "@/../public/javier-miranda-MrWOCGKFVDg-unsplash.jpg";
 import projectStyles from "@/styles/app/project/projects.module.css";
 
 const Projects = () => {

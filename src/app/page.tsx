@@ -19,21 +19,21 @@ const Home = () => {
               <ThemedContainer>
                 <ThemedText
                   className={mainPageStyles.statsProfileText}
-                  value={"7"}
+                  value={"3"}
                 />
                 <ThemedText className="text-gray-400" value="Projects" />
               </ThemedContainer>
               <ThemedContainer>
                 <ThemedText
                   className={mainPageStyles.statsProfileText}
-                  value="3-4"
+                  value="3"
                 />
                 <ThemedText className="text-gray-400" value="Years" />
               </ThemedContainer>
               <ThemedContainer>
                 <ThemedText
                   className={mainPageStyles.statsProfileText}
-                  value="6"
+                  value="7.5"
                 />
                 <ThemedText className="text-gray-400" value="Rating" />
               </ThemedContainer>
@@ -56,7 +56,7 @@ const Home = () => {
                 <LinkedIn />
                 Connect
               </Link>
-              <Link 
+              <Link
                 href={
                   "malito:jonaslekgau@gmail.com?subject=Inquiry from your profile"
                 }
@@ -98,18 +98,24 @@ const Home = () => {
               "
             />
 
-            <ThemedContainer className="text-center  center-content items-center mt-2 font-light lg:px-16 w-full">
-              <Link href={"https://github.com/codewithwest"} target="_blank">
+            <ThemedContainer className="text-center center-content items-center mt-2 font-light lg:px-16 w-full">
+              <Link
+                className="text-lg underline"
+                href={"https://github.com/codewithwest"}
+                target="_blank"
+              >
                 <GitHub />
               </Link>
             </ThemedContainer>
 
             <Link
-              href={"/"}
+              href={
+                "https://docs.google.com/document/d/19fdnYJYhasnL9dkwBTbl4QdGZKK1mFG6/edit?usp=drive_link&ouid=100736280396810362309&rtpof=true&sd=true"
+              }
               target="_blank"
               className="text-gray-300 py-2 px-4 m-auto font-medium mt-4"
             >
-              See more
+              View Resume
             </Link>
           </ThemedContainer>
         </ThemedContainer>
