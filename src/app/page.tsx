@@ -19,7 +19,7 @@ const Home = () => {
               <ThemedContainer>
                 <ThemedText
                   className={mainPageStyles.statsProfileText}
-                  value={"3"}
+                  value={"5"}
                 />
                 <ThemedText className="text-gray-400" value="Projects" />
               </ThemedContainer>
