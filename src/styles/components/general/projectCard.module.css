@@ -21,13 +21,13 @@
 }
 
 .projectCardRepoLink {
-    @apply "text-body-color dark:text-dark-6 hover:border-primary inline-block; 
-@apply inline-block rounded-md dark: border-dark-3 py-[10px] px-7 text-sm;
+    @apply text-body-color dark:text-dark-6 hover:border-primary inline-block;
+    @apply inline-block rounded-md dark: border-dark-3 py-[10px] px-7 text-sm;
     @apply font-medium transition hover:text-white hover:bg-primary;
 }
 
 .projectCardLiveLink {
-    @apply text-body-color dark: text-dark-6 hover:border-primary;
+    @apply text-body-color dark:text-dark-6 hover:border-primary;
     @apply hover:bg-primary inline-block rounded-md dark:border-dark-3 py-[10px];
     @apply px-7 text-sm font-medium transition hover:text-white;
 }
