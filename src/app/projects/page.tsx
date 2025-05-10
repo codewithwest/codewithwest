@@ -13,35 +13,35 @@ import profilePicture from "@/../public/javier-miranda-MrWOCGKFVDg-unsplash.jpg"
 import projectStyles from "@/styles/app/project/projects.module.css";
 
 const Projects = () => {
-  const [showCard, setShowCard] = useState("");
+  const [showCard, setShowCard] = useState("all projects");
   const { loading, error, data } = useQuery(GET_PROJECTS, {
-    variables: { limit: 10 },
+    variables: { limit: 10, page: 1 },
+
     fetchPolicy: "cache-and-network",
     nextFetchPolicy: "cache-first",
   });
 
   const projectCategories = useQuery(GET_PROJECT_CATEGORIES, {
-    variables: { limit: 10 },
+    variables: { limit: 10, page: 1 },
     fetchPolicy: "cache-and-network",
     nextFetchPolicy: "cache-first",
   });
 
   const projectData = useMemo(() => {
-    return loading ? [] : data?.getProjects;
+    return loading ? [] : data?.getProjects?.data;
   }, [loading, data]);
 
   const projectCategoriesData = useMemo(() => {
     return projectCategories?.loading
       ? []
-      : projectCategories?.data?.getProjectCategories;
+      : projectCategories?.data?.getProjectCategories?.data;
   }, [projectCategories]);
 
   const getCategoryName = (categoryId: number): string => {
-    let categoryName = "";
-    projectCategoriesData?.forEach((category: projectCategoryType) => {
-      if (category.id === categoryId) categoryName = category?.name;
-    });
-    return categoryName?.toLowerCase();
+    const category = projectCategoriesData?.find(
+      (category: projectCategoryType) => category.id === categoryId
+    );
+    return category?.name?.toLowerCase() || "";
   };
 
   const categoryButton = (
@@ -54,15 +54,14 @@ const Projects = () => {
         <div className={projectStyles.categoryButtonContainer}>
           <button
             onClick={() => {
-              handleProject(showCard);
+              handleProject(projectCategoryName.toLowerCase());
             }}
             className={`${projectStyles.categoryButton} ${
-              showCard === "" &&
-              projectCategoryName.toLowerCase() === "all projects"
-                ? `activeClasses shadow-current`
-                : showCard === projectCategoryName.toLowerCase()
-                ? `activeClasses shadow-current`
-                : `inactiveClasses shadow-black hover:text-white`
+              showCard === projectCategoryName.toLowerCase() ||
+              (showCard === "all projects" &&
+                projectCategoryName.toLowerCase() === "all projects")
+                ? `activeClasses border-b border-b-current border-blue-200 transition-all`
+                : `inactiveClasses`
             }`}
           >
             {projectCategoryName}
@@ -73,7 +72,7 @@ const Projects = () => {
   };
 
   const handleProject = (category: string) => {
-    return category === "" ? setShowCard(category) : setShowCard(category);
+    setShowCard(category);
   };
 
   return (
@@ -104,13 +103,13 @@ const Projects = () => {
                   <>Loading Categories...</>
                 ) : (
                   <>
-                    {categoryButton(0, "All Projects", "")}
+                    {categoryButton(0, "All Projects", showCard)}
                     {projectCategoriesData?.map(
-                      (projectCategory: projectCategoryType, index: number) =>
+                      (projectCategory: projectCategoryType) =>
                         categoryButton(
-                          projectCategory?.id + index,
+                          projectCategory?.id,
                           projectCategory?.name,
-                          projectCategory?.name?.toLowerCase()
+                          showCard
                         )
                     )}
                   </>

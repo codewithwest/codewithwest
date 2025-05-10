@@ -6,10 +6,24 @@ import ThemedText from "@/components/general/ThemedText";
 import profileImage from "@/../public/profile.jpg";
 import Image from "next/image";
 import Link from "next/link";
-
 import mainPageStyles from "@/styles/app/mainPage.module.css";
 import { Email, GitHub, LinkedIn } from "@mui/icons-material";
+import { useMemo } from "react";
+import { useQuery } from "@apollo/client";
+import { GET_PROJECTS_COUNT } from "@/provider/data_schema/projects.gql";
+
 const Home = () => {
+  const { loading, data } = useQuery(GET_PROJECTS_COUNT, {
+    variables: { limit: 10, page: 1 },
+
+    fetchPolicy: "cache-and-network",
+    nextFetchPolicy: "cache-first",
+  });
+
+  const projectData = useMemo(() => {
+    return loading ? [] : data?.getProjects?.pagination;
+  }, [loading, data]);
+
   return (
     <ThemeProvider>
       <ThemedContainer className={mainPageStyles.mainProfileContainer}>
@@ -19,7 +33,7 @@ const Home = () => {
               <ThemedContainer>
                 <ThemedText
                   className={mainPageStyles.statsProfileText}
-                  value={"5"}
+                  value={projectData?.totalItems ?? 0}
                 />
                 <ThemedText className="text-gray-400" value="Projects" />
               </ThemedContainer>
@@ -58,7 +72,7 @@ const Home = () => {
               </Link>
               <Link
                 href={
-                  "malito:jonaslekgau@gmail.com?subject=Inquiry from your profile"
+                  "mailto:jonaslekgau@gmail.com?subject=Inquiry from your profile"
                 }
                 className={mainPageStyles.contentItems}
               >
@@ -67,25 +81,20 @@ const Home = () => {
               </Link>
             </ThemedContainer>
           </ThemedContainer>
-          <ThemedContainer className="mt-20 text-center border-b pb-12">
+          <ThemedContainer className={mainPageStyles.name}>
             <ThemedText className="text-4xl font-medium" value="Jonas Lekgau" />
-            {/* <ThemedText className="font-light text-gray-500" value="26" /> */}
             <ThemedText
-              className="font-light text-gray-600 mt-3"
-              value="Pretoria, South Africa"
-            />
-            <ThemedText
-              className="mt-8  "
+              className="mt-8"
               value="Backend Developer - Platform Engineer"
             />
             <ThemedText
-              className="text-m2 mt-2 text-gray-500"
-              value="MERN | LAMP | JAVA | Docker | Jenkins"
+              className={mainPageStyles.techStacks}
+              value="MERN | LAMP | Flask | Go | JAVA | Docker | Jenkins"
             />
           </ThemedContainer>
-          <ThemedContainer className="mt-12 flex flex-col justify-center">
+          <ThemedContainer className={mainPageStyles.bioContainer}>
             <ThemedText
-              className="text-center font-light lg:px-16"
+              className={mainPageStyles.bio}
               value="
                 Welcome! I'm Jonas Lekgau, a Software/Platform Engineer with 
                 3 years of experience building and scaling high-performance 
@@ -113,7 +122,7 @@ const Home = () => {
                 "https://docs.google.com/document/d/19fdnYJYhasnL9dkwBTbl4QdGZKK1mFG6/edit?usp=drive_link&ouid=100736280396810362309&rtpof=true&sd=true"
               }
               target="_blank"
-              className="text-gray-300 py-2 px-4 m-auto font-medium mt-4"
+              className={mainPageStyles.resumeLink}
             >
               View Resume
             </Link>

@@ -10,7 +10,7 @@ const authLink = setContext((_, { headers }) => {
   return {
     headers: {
       ...headers,
-      authorization: `Bearer ${process.env.REACT_APP_API_TOKEN}`,
+      authorization: `Bearer ${process.env.NEXT_PUBLIC_API_TOKEN}`,
       signature: localStorage?.token,
       user_id: localStorage?.user_id,
     },

@@ -1,0 +1,33 @@
+.mainContainer {
+    @apply w-full mx-4 sm:m-0 px-4 lg:w-1/3 md:w-1/2;
+}
+
+.projectCardImageContainer {
+    @apply overflow-hidden brightness-50 rounded-[10px];
+}
+
+.projectCardImage {
+    @apply w-full p-2 rounded-lg backdrop-blur-[14px];
+}
+
+.projectCardTitleContainer {
+    @apply relative z-10 mx-7 -mt-20 rounded-lg backdrop-blur-[14px];
+    @apply shadow-sm border-t-2 border-t-green-700 shadow-current dark:bg-dark-2;
+    @apply py-[34px] px-3 text-center shadow-portfolio dark:shadow-box-dark;
+}
+
+.projectCardTitle {
+    @apply text-dark dark:text-white mb-5 text-xl font-bold;
+}
+
+.projectCardRepoLink {
+    @apply "text-body-color dark:text-dark-6 hover:border-primary inline-block; 
+@apply inline-block rounded-md dark: border-dark-3 py-[10px] px-7 text-sm;
+    @apply font-medium transition hover:text-white hover:bg-primary;
+}
+
+.projectCardLiveLink {
+    @apply text-body-color dark: text-dark-6 hover:border-primary;
+    @apply hover:bg-primary inline-block rounded-md dark:border-dark-3 py-[10px];
+    @apply px-7 text-sm font-medium transition hover:text-white;
+}

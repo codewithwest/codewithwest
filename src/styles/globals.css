@@ -6,8 +6,8 @@
   :root {
     --main-dark-bg-color: #0e0f12;
     --secondary-dark-bg-color: #03080f;
-    --main-dark-text-color: #10dede;
-    --main-dark-border-color: #10dede;
+    --main-dark-text-color: #f0a607ee;
+    --main-dark-border-color: #f0a607ee;
     --main-dark-full-box-shadow: 1.5px 1.5px 4px var(--main-dark-text-color),
       -1.5px -1.5px 4px var(--main-dark-text-color);
   }
