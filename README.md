@@ -70,3 +70,5 @@
 </div>
 
 ---
+
+<a href="https://app.daily.dev/jus_west"><img src="https://api.daily.dev/devcards/v2/Rf6Weo0qx5ZoAYPPkngIf.png?type=default&r=7jv" width="356" alt="West's Dev Card"/></a>
