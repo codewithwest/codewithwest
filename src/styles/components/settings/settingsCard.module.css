@@ -1,3 +1,0 @@
-.cardContainer {
-  @apply relative grid flex-col justify-center overflow-hidden rounded-lg shadow-md shadow-current;
-}

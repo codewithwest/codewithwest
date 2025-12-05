@@ -1,0 +1,34 @@
+{
+  "placeholderImages": [
+    {
+      "id": "project-1",
+      "description": "Abstract gradient background for a project card",
+      "imageUrl": "https://images.unsplash.com/photo-1620641788421-7a1c342ea42e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxhYnN0cmFjdCUyMGdyYWRpZW50fGVufDB8fHx8MTc2NDgyODA3M3ww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "abstract gradient"
+    },
+    {
+      "id": "project-2",
+      "description": "Modern user interface screenshot",
+      "imageUrl": "https://images.unsplash.com/photo-1547119957-637f8679db1e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHx1aSUyMGRlc2lnbnxlbnwwfHx8fDE3NjQ5MTYyMTd8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "ui design"
+    },
+    {
+      "id": "project-3",
+      "description": "Lines of code on a dark screen",
+      "imageUrl": "https://images.unsplash.com/photo-1763568258226-3e3f67a6577e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxjb2RlJTIwZWRpdG9yfGVufDB8fHx8MTc2NDg3OTEwMHww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "code editor"
+    },
+    {
+      "id": "project-4",
+      "description": "AI-themed abstract image",
+      "imageUrl": "https://images.unsplash.com/photo-1683937397753-3a75c16b6c3a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxhcnRpZmljaWFsJTIwaW50ZWxsaWdlbmNlfGVufDB8fHx8MTc2NDk4Mjc3N3ww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "ai abstract"
+    },
+    {
+      "id": "profile-pic",
+      "description": "A portrait of a developer",
+      "imageUrl": "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxtYW4lMjBwb3J0cmFpdHxlbnwwfHx8fDE3NjQ4NTgzNzR8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "man portrait"
+    }
+  ]
+}

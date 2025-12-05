@@ -1,7 +1,0 @@
-.themedButton {
-  @apply p-10 m-4 rounded shadow-md shadow-current;
-}
-
-.themedButton2 {
-  @apply p-10 m-4 rounded shadow-lg shadow-current;
-}

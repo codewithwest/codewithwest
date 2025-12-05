@@ -1,21 +1,11 @@
-import type { Metadata } from "next";
-// import { Geist, Geist_Mono } from "next/font/google";
-import "@/styles/globals.css";
-import ReduxProvider from "@/provider/reduxProvider";
-
-// const geistSans = Geist({
-//   variable: "--font-geist-sans",
-//   subsets: ["latin"],
-// });
-
-// const geistMono = Geist_Mono({
-//   variable: "--font-geist-mono",
-//   subsets: ["latin"],
-// });
+import type {Metadata} from 'next';
+import './globals.css';
+import { Toaster } from "@/components/ui/toaster";
+import { cn } from '@/lib/utils';
 
 export const metadata: Metadata = {
-  title: "Codewithwest",
-  description: "The only code you need for your next project",
+  title: 'CodeWest Portfolio',
+  description: 'A professional developer portfolio to showcase development skills, projects, and educational background.',
 };
 
 export default function RootLayout({
@@ -24,14 +14,16 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <ReduxProvider>
-        {/* <body
-            className={`${geistSans.variable} ${geistMono.variable} antialiased `}
-          > */}
+    <html lang="en" className="dark">
+      <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet" />
+      </head>
+      <body className={cn("font-body antialiased")}>
         {children}
-        {/* </body> */}
-      </ReduxProvider>
+        <Toaster />
+      </body>
     </html>
   );
 }
