@@ -38,7 +38,7 @@ Here are some of the languages, frameworks, and tools I love to work with:
 
 #### ⚙️ Tools & Platforms
 <p align="left">
-  <img src="https://skillicons.dev/icons?i=docker,git,github,kubernetes,jenkins,firebase,mongodb,graphql" alt="Tools & Platforms" />
+  <img src="https://skillicons.dev/icons?i=docker,git,github,kubernetes,jenkins,argocd,firebase,mongodb,mysql,graphql" alt="Tools & Platforms" />
 </p>
 
 ---
