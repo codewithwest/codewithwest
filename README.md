@@ -15,9 +15,9 @@ I'm a passionate and self-taught Full Stack Developer with a knack for building 
 You can find me on these platforms. I'd love to hear from you!
 
 <p align="left">
-  <a href="https://www.linkedin.com/in/codewithwest/" target="blank"><img align="center" src="https://skillicons.dev/icons?i=linkedin" alt="Jonas Lekgau's LinkedIn" height="40" width="40" /></a>
-  <a href="https://github.com/codewithwest" target="blank"><img align="center" src="https://skillicons.dev/icons?i=github" alt="codewithwest's GitHub" height="40" width="40" /></a>
-  <a href="https://codewithwest.vercel.app/" target="blank"><img align="center" src="https://skillicons.dev/icons?i=webflow" alt="codewithwest.vercel.app" height="40" width="40" /></a>
+  <a href="https://www.linkedin.com/in/codewithwest/" target="_blank"><img align="center" src="https://skillicons.dev/icons?i=linkedin" alt="Jonas Lekgau's LinkedIn" height="40" width="40" /></a>
+  <a href="https://github.com/codewithwest" target="_blank"><img align="center" src="https://skillicons.dev/icons?i=github" alt="codewithwest's GitHub" height="40" width="40" /></a>
+  <a href="https://codewithwest.vercel.app/" target="_blank"><img align="center" src="https://skillicons.dev/icons?i=webflow" alt="codewithwest.vercel.app" height="40" width="40" /></a>
 </p>
 
 ---
