@@ -1,0 +1,14 @@
+diff --git a/node_modules/react-reconciler/index.js b/node_modules/react-reconciler/index.js
+index 4554868..6573c9f 100644
+--- a/node_modules/react-reconciler/index.js
++++ b/node_modules/react-reconciler/index.js
+@@ -10,7 +10,8 @@
+ if (process.env.NODE_ENV === 'production') {
+   module.exports = require('./cjs/react-reconciler.production.min.js');
+ } else {
+-  module.exports = require('./cjs/react-reconciler.development.js');
++  // module.exports = require('./cjs/react-reconciler.development.js');
++  module.exports = require('react/src/ReactSharedInternals');
+ }
+ 
+

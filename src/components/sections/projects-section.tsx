@@ -9,8 +9,8 @@ import { Button } from '@/components/ui/button';
 import { useQuery } from '@apollo/client';
 import { GET_PROJECTS } from '@/provider/data_schema/projects.gql';
 import { projectType } from '@/helpers/general/projects';
-import { Skeleton } from '../ui/skeleton';
 import { Alert, AlertDescription, AlertTitle } from '../ui/alert';
+import ThreeAnimation from '../general/ThreeAnimation';
 
 export default function ProjectsSection() {
   const { loading, error, data } = useQuery(GET_PROJECTS, {
@@ -25,7 +25,7 @@ export default function ProjectsSection() {
         <div className="mx-auto max-w-xl text-center mb-12">
           <h2 className="font-headline text-3xl font-bold tracking-tight sm:text-4xl">My Projects</h2>
           <p className="mt-4 text-muted-foreground">
-            A selection of my work. I&apos;m always exploring new technologies and ideas.
+            A selection of my work. I'm always exploring new technologies and ideas.
           </p>
         </div>
         
@@ -38,17 +38,9 @@ export default function ProjectsSection() {
               </AlertDescription>
             </Alert>
         ) : loading ? (
-          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-            {Array.from({ length: 3 }).map((_, i) => (
-              <div key={i} className="flex flex-col space-y-3">
-                <Skeleton className="h-[230px] w-full rounded-xl" />
-                <div className="space-y-2">
-                  <Skeleton className="h-4 w-3/4" />
-                  <Skeleton className="h-4 w-1/2" />
-                </div>
-              </div>
-            ))}
-          </div>
+           <div className="w-full h-[300px]">
+              <ThreeAnimation />
+            </div>
         ) : (
           <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
             {projects.map((project: projectType) => (
