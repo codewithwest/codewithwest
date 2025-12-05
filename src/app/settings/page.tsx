@@ -1,17 +1,26 @@
-"use client";
-import React from "react";
-import ThemeProvider from "../../provider/general/themeProvider";
-import styles from "@/styles/app/settings/settings.module.css";
-import { SettingsGrid } from "../../components/settings/settingsGrid";
-import ThemedContainer from "@/components/general/themedContainer";
+import { SettingsCard } from "@/components/settings/settingsCard";
+import Header from "@/components/shared/header";
+import Footer from "@/components/shared/footer";
 
 const Settings = () => {
   return (
-    <ThemeProvider>
-      <ThemedContainer className={styles.settings}>
-        <SettingsGrid />
-      </ThemedContainer>
-    </ThemeProvider>
+    <div className="flex flex-col min-h-screen">
+      <Header />
+      <main className="flex-1">
+        <div className="container mx-auto px-4 py-16">
+            <h1 className="text-4xl font-headline font-bold text-center mb-12">Settings</h1>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-4xl mx-auto">
+                <SettingsCard
+                    url="settings/preferences"
+                    header="Preferences"
+                    description="Update your display preferences"
+                />
+                {/* Add more settings cards here */}
+            </div>
+        </div>
+      </main>
+      <Footer />
+    </div>
   );
 };
 

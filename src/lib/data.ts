@@ -51,34 +51,41 @@ export const skills: SkillCategory[] = [
   {
     name: 'Languages',
     skills: [
-      { name: 'JavaScript', proficiency: 'Proficient' },
       { name: 'TypeScript', proficiency: 'Proficient' },
-      { name: 'HTML5', proficiency: 'Proficient' },
-      { name: 'CSS3/Sass', proficiency: 'Proficient' },
-      { name: 'Python', proficiency: 'Familiar' },
+      { name: 'JavaScript', proficiency: 'Proficient' },
+      { name: 'Python', proficiency: 'Proficient' },
+      { name: 'Go (Golang)', proficiency: 'Familiar' },
+      { name: 'Dart', proficiency: 'Familiar' },
+      { name: 'PHP', proficiency: 'Familiar' },
       { name: 'SQL', proficiency: 'Familiar' },
     ],
   },
   {
     name: 'Frameworks & Libraries',
     skills: [
-      { name: 'React', proficiency: 'Proficient' },
       { name: 'Next.js', proficiency: 'Proficient' },
+      { name: 'React', proficiency: 'Proficient' },
+      { name: 'React Native', proficiency: 'Proficient' },
       { name: 'Node.js', proficiency: 'Proficient' },
-      { name: 'Express.js', proficiency: 'Proficient' },
+      { name: 'Flutter', proficiency: 'Familiar' },
+      { name: 'Flask', proficiency: 'Familiar' },
+      { name: 'Django', proficiency: 'Familiar' },
+      { name: 'Laravel', proficiency: 'Familiar' },
       { name: 'Tailwind CSS', proficiency: 'Proficient' },
-      { name: 'Redux', proficiency: 'Familiar' },
     ],
   },
   {
     name: 'Tools & Platforms',
     skills: [
+      { name: 'Docker', proficiency: 'Proficient' },
       { name: 'Git & GitHub', proficiency: 'Proficient' },
-      { name: 'Docker', proficiency: 'Familiar' },
+      { name: 'Kubernetes', proficiency: 'Familiar' },
+      { name: 'Jenkins', proficiency: 'Familiar' },
+      { name: 'Argo CD', proficiency: 'Familiar' },
       { name: 'Firebase', proficiency: 'Proficient' },
-      { name: 'Vercel', proficiency: 'Proficient' },
-      { name: 'Figma', proficiency: 'Familiar' },
-      { name: 'PostgreSQL', proficiency: 'Familiar' },
+      { name: 'MySQL', proficiency: 'Familiar' },
+      { name: 'MongoDB', proficiency: 'Familiar' },
+      { name: 'GraphQL', proficiency: 'Familiar' },
     ],
   },
 ];
@@ -105,7 +112,7 @@ export const experiences: Experience[] = [
 ];
 
 export const profile = {
-  name: 'West',
+  name: 'Jonas Lekgau',
   avatar: getPlaceholderImage('profile-pic').imageUrl,
   avatarHint: getPlaceholderImage('profile-pic').imageHint,
 };

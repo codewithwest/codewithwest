@@ -1,138 +1,118 @@
+
 "use client";
-import ThemedContainer from "@/components/general/themedContainer";
-import ThemeProvider from "@/provider/general/themeProvider";
-import { useMemo, useState } from "react";
-import { useQuery } from "@apollo/client";
+import React, { useMemo, useState, useEffect } from "react";
+import { ApolloProvider, useQuery } from "@apollo/client";
+import type { ApolloClient, NormalizedCacheObject } from '@apollo/client';
 import PortfolioCard from "@/components/general/portfolioCard";
 import {
   GET_PROJECT_CATEGORIES,
   GET_PROJECTS,
 } from "@/provider/data_schema/projects.gql";
 import { projectCategoryType, projectType } from "@/helpers/general/projects";
-import profilePicture from "@/../public/javier-miranda-MrWOCGKFVDg-unsplash.jpg";
-import projectStyles from "@/styles/app/project/projects.module.css";
+import Header from "@/components/shared/header";
+import Footer from "@/components/shared/footer";
+import { Button } from "@/components/ui/button";
+import { Skeleton } from "@/components/ui/skeleton";
+import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
+import { Terminal } from "lucide-react";
+import { createApolloClient } from "@/services/apolloClient";
 
-const Projects = () => {
+const ProjectsPage = () => {
   const [showCard, setShowCard] = useState("all projects");
+  
   const { loading, error, data } = useQuery(GET_PROJECTS, {
-    variables: { limit: 10, page: 1 },
-
-    fetchPolicy: "cache-and-network",
-    nextFetchPolicy: "cache-first",
+    variables: { limit: 10 },
   });
 
-  const projectCategories = useQuery(GET_PROJECT_CATEGORIES, {
-    variables: { limit: 10, page: 1 },
-    fetchPolicy: "cache-and-network",
-    nextFetchPolicy: "cache-first",
+  const {
+    loading: categoriesLoading,
+    error: categoriesError,
+    data: categoriesData,
+  } = useQuery(GET_PROJECT_CATEGORIES, {
+    variables: { limit: 10 },
   });
 
   const projectData = useMemo(() => {
-    return loading ? [] : data?.getProjects?.data;
+    return loading || !data ? [] : data?.getProjects?.data;
   }, [loading, data]);
 
   const projectCategoriesData = useMemo(() => {
-    return projectCategories?.loading
-      ? []
-      : projectCategories?.data?.getProjectCategories?.data;
-  }, [projectCategories]);
+    return categoriesLoading || !categoriesData ? [] : categoriesData?.getProjectCategories?.data;
+  }, [categoriesLoading, categoriesData]);
 
   const getCategoryName = (categoryId: number): string => {
     const category = projectCategoriesData?.find(
-      (category: projectCategoryType) => category.id === categoryId
+      (cat: projectCategoryType) => cat.id === categoryId
     );
     return category?.name?.toLowerCase() || "";
   };
-
-  const categoryButton = (
-    index: number,
-    projectCategoryName: string,
-    showCard: string
-  ) => {
-    return (
-      <li key={index}>
-        <div className={projectStyles.categoryButtonContainer}>
-          <button
-            onClick={() => {
-              handleProject(projectCategoryName.toLowerCase());
-            }}
-            className={`${projectStyles.categoryButton} ${
-              showCard === projectCategoryName.toLowerCase() ||
-              (showCard === "all projects" &&
-                projectCategoryName.toLowerCase() === "all projects")
-                ? `activeClasses border-b border-b-current border-blue-200 transition-all`
-                : `inactiveClasses`
-            }`}
-          >
-            {projectCategoryName}
-          </button>
-        </div>
-      </li>
-    );
-  };
-
+  
   const handleProject = (category: string) => {
-    setShowCard(category);
+    setShowCard(category.toLowerCase());
   };
 
   return (
-    <ThemeProvider>
-      <ThemedContainer className={projectStyles.mainContainer}>
-        <ThemedContainer className={projectStyles.innerContainer}>
-          <ThemedContainer className={projectStyles.header}>
-            <ThemedContainer className={projectStyles.headerInnerContainer}>
-              <ThemedContainer className={projectStyles.headerMainContainer}>
-                <span className={projectStyles.headerText}>Our Portfolio</span>
-                <h2 className={projectStyles.secondHeaderText}>
-                  Our Recent Projects
-                </h2>
-                <p className={projectStyles.headerDescription}>
-                  This is where we showcase our past, present and future for
-                  none exist without the other
-                </p>
-              </ThemedContainer>
-            </ThemedContainer>
-          </ThemedContainer>
+    <div className="flex flex-col min-h-screen">
+      <Header />
+      <main className="flex-1">
+        <div className="container mx-auto px-4 py-16">
+          <div className="text-center mb-12">
+            <h1 className="font-headline text-4xl font-bold tracking-tight sm:text-5xl">Our Recent Projects</h1>
+            <p className="mt-4 max-w-2xl mx-auto text-muted-foreground">
+              A showcase of our past, present, and future work.
+            </p>
+          </div>
 
-          <ThemedContainer className={projectStyles.projectsNavContainer}>
-            <ThemedContainer
-              className={projectStyles.projectsNavInnerContainer}
-            >
-              <ul className={projectStyles.projectsCardsContainer}>
-                {projectCategories?.loading ? (
-                  <>Loading Categories...</>
-                ) : (
-                  <>
-                    {categoryButton(0, "All Projects", showCard)}
-                    {projectCategoriesData?.map(
-                      (projectCategory: projectCategoryType) =>
-                        categoryButton(
-                          projectCategory?.id,
-                          projectCategory?.name,
-                          showCard
-                        )
-                    )}
-                  </>
-                )}
-              </ul>
-            </ThemedContainer>
-          </ThemedContainer>
-          {error ? (
-            <ThemedContainer className="flex  items-center text-md ">
-              <p className="m-auto text-red-200">
-                Sorry! An Error occurred while fetching projects.
-              </p>
-            </ThemedContainer>
+          <div className="flex justify-center mb-8">
+            <div className="flex flex-wrap justify-center gap-2">
+              <Button
+                variant={showCard === 'all projects' ? 'default' : 'outline'}
+                onClick={() => handleProject("all projects")}
+              >
+                All Projects
+              </Button>
+              {categoriesLoading ? (
+                 Array.from({ length: 3 }).map((_, i) => <Skeleton key={i} className="h-10 w-24" />)
+              ) : (
+                projectCategoriesData?.map((cat: projectCategoryType) => (
+                  <Button
+                    key={cat.id}
+                    variant={showCard === cat.name.toLowerCase() ? 'default' : 'outline'}
+                    onClick={() => handleProject(cat.name)}
+                  >
+                    {cat.name}
+                  </Button>
+                ))
+              )}
+            </div>
+          </div>
+
+          {error || categoriesError ? (
+            <Alert variant="destructive" className="max-w-2xl mx-auto">
+              <Terminal className="h-4 w-4" />
+              <AlertTitle>Error Fetching Data</AlertTitle>
+              <AlertDescription>
+                Sorry! An error occurred while fetching project information. Please check your API endpoint and configuration in the .env file.
+              </AlertDescription>
+            </Alert>
           ) : loading ? (
-            <ThemedContainer className="flex w-full content-center items-center">
-              <h2 className="m-auto">Loading ...</h2>
-            </ThemedContainer>
+             <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+              {Array.from({ length: 6 }).map((_, i) => (
+                <div key={i} className="flex flex-col space-y-3">
+                  <Skeleton className="h-[230px] w-full rounded-xl" />
+                  <div className="space-y-2">
+                    <Skeleton className="h-4 w-3/4" />
+                    <Skeleton className="h-4 w-1/2" />
+                  </div>
+                </div>
+              ))}
+            </div>
           ) : (
-            <ThemedContainer className="flex flex-wrap">
+            <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
               {projectData?.map((project: projectType, index: number) => (
                 <PortfolioCard
                   key={index}
-                  ImageHref={profilePicture.src}
+                  ImageHref={"https://picsum.photos/seed/" + project.id + "/600/400"}
                   category={getCategoryName(project?.project_category_id)}
                   title={project?.name}
                   githubLink={project?.github_link}
@@ -141,12 +121,36 @@ const Projects = () => {
                   showCard={showCard}
                 />
               ))}
-            </ThemedContainer>
+            </div>
           )}
-        </ThemedContainer>
-      </ThemedContainer>
-    </ThemeProvider>
+        </div>
+      </main>
+      <Footer />
+    </div>
   );
 };
 
-export default Projects;
+const ProjectsPageWrapper = () => {
+  const [client, setClient] = useState<ApolloClient<NormalizedCacheObject> | null>(null);
+
+  useEffect(() => {
+    // Initialize the client on the client-side
+    setClient(createApolloClient());
+  }, []);
+
+  if (!client) {
+      return (
+          <div className="flex flex-col min-h-screen items-center justify-center">
+              <p>Initializing API client...</p>
+          </div>
+      );
+  }
+    
+  return (
+      <ApolloProvider client={client}>
+          <ProjectsPage />
+      </ApolloProvider>
+  )
+}
+
+export default ProjectsPageWrapper;

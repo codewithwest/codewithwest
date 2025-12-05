@@ -1,37 +1,30 @@
 import Link from "next/link";
-import { DisplaySettings } from "@mui/icons-material";
-import ThemedContainer from "../general/themedContainer";
-import settingsCardStyles from "@/styles/components/settings/settingsCard.module.css";
+import { Card, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { ArrowRight, Settings } from "lucide-react";
 
-interface settingsCard {
-  iconSize?: number;
-  url?: string;
-  header?: string;
-  description?: string;
+interface SettingsCardProps {
+  url: string;
+  header: string;
+  description: string;
 }
 
 export const SettingsCard = ({
   header,
   description,
-  iconSize,
   url,
-}: settingsCard) => {
+}: SettingsCardProps) => {
   return (
-    <ThemedContainer className={settingsCardStyles.cardContainer}>
-      <Link href={url ?? ""}>
-        <ThemedContainer className="absolute inset-0 m-0 h-full w-full overflow-hidden rounded-none bg-transparent  bg-cover bg-center">
-          <ThemedContainer className="to-bg-black-10 absolute inset-0 h-full w-full"></ThemedContainer>
-        </ThemedContainer>
-        <ThemedContainer className="relative text-center p-6 px-6 py-14 md:px-12">
-          <h2 className="mb-6 text-3xl font-medium  ">{header ?? ""}</h2>
-
-          <h5 className="mb-4 text-lg font-semibold">{description ?? ""}</h5>
-          <DisplaySettings
-            style={{ fontSize: iconSize ?? 32 }}
-            className="relative inline-block"
-          />
-        </ThemedContainer>{" "}
-      </Link>
-    </ThemedContainer>
+    <Link href={url ?? ""}>
+      <Card className="h-full transition-all hover:shadow-lg hover:-translate-y-1">
+        <CardHeader className="flex flex-row items-center gap-4">
+            <Settings className="w-8 h-8 text-primary" />
+            <div className="flex-1">
+                <CardTitle>{header ?? ""}</CardTitle>
+                <CardDescription>{description ?? ""}</CardDescription>
+            </div>
+            <ArrowRight className="w-5 h-5 text-muted-foreground" />
+        </CardHeader>
+      </Card>
+    </Link>
   );
 };

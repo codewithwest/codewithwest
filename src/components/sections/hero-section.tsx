@@ -17,8 +17,8 @@ export default function HeroSection() {
           <h1 className="font-headline text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl lg:text-7xl">
             Hi, I&apos;m <span className="bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent">{profile.name}</span>
           </h1>
-          <p className="mx-auto max-w-2xl text-lg text-muted-foreground md:text-xl">
-            A passionate developer building modern, responsive, and engaging web experiences from scratch.
+          <p className="mx-auto max-w-3xl text-lg text-muted-foreground md:text-xl">
+            A Software and Platform Engineer with 3 years of experience building and scaling high-performance applications. I&apos;m passionate about automation, performance optimization, and system architecture. My journey includes hands-on experience as a Backend Engineer at Vaimo, a leading e-commerce developer. Currently, I&apos;m creating a training management app for athletes.
           </p>
         </div>
         <div className="flex flex-col gap-4 sm:flex-row">

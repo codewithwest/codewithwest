@@ -1,4 +1,4 @@
-# **App Name**: CodeWest Portfolio
+# **App Name**: CodeWithWest Portfolio
 
 ## Core Features:
 

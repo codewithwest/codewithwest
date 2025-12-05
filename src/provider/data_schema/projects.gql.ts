@@ -1,4 +1,4 @@
-import gql from "graphql-tag";
+import { gql } from "graphql-tag";
 import PAGINATION from "./reusables.gql";
 
 export const GET_PROJECTS = gql`

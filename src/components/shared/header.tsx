@@ -2,7 +2,8 @@
 
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { Menu, X } from 'lucide-react';
+import Image from 'next/image';
+import { Menu } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 import { cn } from '@/lib/utils';
@@ -12,6 +13,8 @@ const navItems = [
   { name: 'Skills', href: '#skills' },
   { name: 'Experience', href: '#experience' },
   { name: 'Contact', href: '#contact' },
+  { name: 'All Projects', href: '/projects' },
+  { name: 'Journey', href: '/journey' },
 ];
 
 export default function Header() {
@@ -37,7 +40,8 @@ export default function Header() {
     >
       <div className="container mx-auto flex h-16 items-center justify-between px-4 md:px-6">
         <Link href="/" className="flex items-center gap-2">
-          <span className="text-xl font-bold font-headline text-primary">CodeWest</span>
+          <Image src="/codewithwest.webp" alt="CodeWithWest Logo" width={40} height={40} className="rounded-full" />
+          <span className="text-xl font-bold font-headline text-primary">CodeWithWest</span>
         </Link>
 
         <nav className="hidden items-center gap-6 md:flex">
@@ -63,7 +67,8 @@ export default function Header() {
             <SheetContent side="right">
               <div className="flex flex-col gap-6 p-6">
                 <Link href="/" className="flex items-center gap-2" onClick={() => setIsMobileMenuOpen(false)}>
-                  <span className="text-xl font-bold font-headline text-primary">CodeWest</span>
+                   <Image src="/codewithwest.webp" alt="CodeWithWest Logo" width={32} height={32} className="rounded-full" />
+                  <span className="text-xl font-bold font-headline text-primary">CodeWithWest</span>
                 </Link>
                 <nav className="flex flex-col gap-4">
                   {navItems.map((item) => (

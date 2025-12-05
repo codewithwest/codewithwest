@@ -21,7 +21,6 @@ import { useEffect, useRef, useState, useCallback } from "react";
 import { Collapse } from "@mui/material";
 import NavigationBar from "./navigationBar";
 import Image from "next/image";
-import codewithwest from "@/../public/codewithwest.png";
 
 export const Header = ({}) => {
   // const pageHeader = useSelector(
@@ -62,9 +61,11 @@ export const Header = ({}) => {
       <ThemedContainer className={headerStyles.leadingHeader}>
         <Link href={"/"}>
           <Image
-            src={codewithwest}
+            src="https://i.ibb.co/3k5g1z2/codewithwest.png"
             alt="back"
             className="rounded-full w-full h-full"
+            width={40}
+            height={40}
           />
         </Link>
         {/* <ThemedText value={pageHeader} className={headerStyles.headerText} /> */}
