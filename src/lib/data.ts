@@ -113,6 +113,6 @@ export const experiences: Experience[] = [
 
 export const profile = {
   name: 'Jonas Lekgau',
-  avatar: getPlaceholderImage('profile-pic').imageUrl,
-  avatarHint: getPlaceholderImage('profile-pic').imageHint,
+  avatar: '/profile.jpg',
+  avatarHint: 'profile picture',
 };
