@@ -50,7 +50,7 @@
     "graphql": "^16.9.0",
     "graphql-tag": "^2.12.6",
     "lucide-react": "^0.475.0",
-    "next": "15.0.0-rc.0",
+    "next": "15.0.7",
     "next-themes": "latest",
     "patch-package": "^8.0.0",
     "react": "19.0.0-rc-f994737d14-20240522",
