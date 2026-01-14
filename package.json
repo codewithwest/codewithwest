@@ -46,6 +46,7 @@
     "dotenv": "^16.5.0",
     "embla-carousel-react": "^8.6.0",
     "firebase": "^11.9.1",
+    "framer-motion": "^12.26.2",
     "genkit": "^1.25.0",
     "graphql": "^16.9.0",
     "graphql-tag": "^2.12.6",

@@ -18,7 +18,7 @@ export const createApolloClient = () => {
     return {
       headers: {
         ...headers,
-        authorization: `Bearer ${process.env.NEXT_PUBLIC_API_TOKEN}`,
+        "X-API-Key": process.env.NEXT_PUBLIC_API_TOKEN || "",
         signature: token,
         user_id: userId,
       },

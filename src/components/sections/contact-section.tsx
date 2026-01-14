@@ -3,9 +3,9 @@
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
-import { useTransition } from 'react';
+import { useMutation } from '@apollo/client';
 
-import { sendMessage } from '@/actions/send-message';
+import { CREATE_CONTACT_MESSAGE } from '@/provider/data_schema/contact.gql';
 import { Button } from '@/components/ui/button';
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '@/components/ui/form';
 import { Input } from '@/components/ui/input';
@@ -23,7 +23,7 @@ type ContactFormValues = z.infer<typeof contactFormSchema>;
 
 export default function ContactSection() {
   const { toast } = useToast();
-  const [isPending, startTransition] = useTransition();
+  const [createContactMessage, { loading }] = useMutation(CREATE_CONTACT_MESSAGE);
 
   const form = useForm<ContactFormValues>({
     resolver: zodResolver(contactFormSchema),
@@ -34,23 +34,28 @@ export default function ContactSection() {
     },
   });
 
-  const onSubmit = (values: ContactFormValues) => {
-    startTransition(async () => {
-      const result = await sendMessage(values);
-      if (result.success) {
+  const onSubmit = async (values: ContactFormValues) => {
+    try {
+      const { data } = await createContactMessage({
+        variables: {
+          input: values
+        }
+      });
+
+      if (data?.createContactMessage) {
         toast({
           title: 'Message Sent!',
-          description: result.message,
+          description: 'Your message has been sent successfully!',
         });
         form.reset();
-      } else {
-        toast({
-          variant: 'destructive',
-          title: 'Uh oh! Something went wrong.',
-          description: result.message,
-        });
       }
-    });
+    } catch (error: any) {
+      toast({
+        variant: 'destructive',
+        title: 'Uh oh! Something went wrong.',
+        description: error.message || 'An error occurred while sending your message.',
+      });
+    }
   };
 
   return (
@@ -104,8 +109,8 @@ export default function ContactSection() {
                 </FormItem>
               )}
             />
-            <Button type="submit" disabled={isPending} className="w-full">
-              {isPending ? <Loader2 className="mr-2 h-4 w-4 animate-spin" /> : "Send Message"}
+            <Button type="submit" disabled={loading} className="w-full">
+              {loading ? <Loader2 className="mr-2 h-4 w-4 animate-spin" /> : "Send Message"}
             </Button>
           </form>
         </Form>
