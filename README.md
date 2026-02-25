@@ -1,8 +1,13 @@
 # ✨ Konnichiwa! こんにちは 👋
 
-<div align="center">
-  <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExM3hpeWJvN2QwbjN0eXFpYWJtZ2xmMHEzMXR2aHI0dG5kNW83eGdyeSZlcD12ZiZpbnRlcm5hbF9naWQmY3Q9cw/iY8q3b0h2tK3D1e5xO/giphy.gif" width="150">
-</div>
+[![Typing SVG](https://readme-typing-svg.demolab.com/?lines=winter+is+coming!)](https://git.io/typing-svg)
+
+[![Readme Quotes](https://quotes-github-readme.vercel.app/api?type=horizontal&theme=dark)](https://github.com/piyushsuthar/github-readme-quotes)
+
+
+
+[![GitHub Streak](https://streak-stats.demolab.com/?user=codewithwest)](https://git.io/streak-stats?theme=radical)
+
 
 <h2 align="center">Welcome to Codewithwest👨‍💻</h2>
 
